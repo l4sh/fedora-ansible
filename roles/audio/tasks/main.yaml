@@ -1,0 +1,15 @@
+# audio role tasks
+- name: Install basic audio related packages
+  dnf:
+    name:
+      - alsa-lib-devel
+      - alsa-lib
+      - alsa-utils
+      - alsa-ucm
+      - alsa-plugins-pulseaudio
+      - pulseaudio
+      - pulseaudio-utils
+      - pulseaudio-libs
+      - pulseaudio-libs-glib2
+      - pulseaudio-module-x11
+    state: present

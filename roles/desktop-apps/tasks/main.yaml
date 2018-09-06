@@ -1,0 +1,6 @@
+# l4sh-desktop role tasks
+- import_tasks: file-manager.yaml
+- import_tasks: browsers.yaml
+- import_tasks: office-software.yaml
+- import_tasks: download-managers.yaml
+- import_tasks: tools.yaml

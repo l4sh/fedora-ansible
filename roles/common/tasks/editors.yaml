@@ -1,0 +1,8 @@
+- name: Install editors
+  dnf:
+    name:
+      - neovim
+      - python2-neovim
+      - python3-neovim
+      - emacs
+    state: present

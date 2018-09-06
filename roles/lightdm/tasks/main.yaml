@@ -1,0 +1,33 @@
+# Main tasks file for lightdm role
+
+- name: Install LightDM
+  dnf:
+    name:
+      - system-switch-displaymanager
+      - lightdm
+      - lightdm-settings
+    state: present
+
+# - name: Set SDDM theme
+#   lineinfile:
+#     dest: /etc/sddm.conf
+#     regexp: '^.*Current=.*$'
+#     line: 'Current=elarun'
+#
+# - name: Set SDDM theme directory
+#   lineinfile:
+#     dest: /etc/sddm.conf
+#     regexp: '^.*ThemeDir=.*$'
+#     line: 'ThemeDir=/usr/share/sddm/themes'
+
+- name: Set LightDM as display manager
+  command: system-switch-displaymanager lightdm
+
+- name: Set default boot target to graphical.target
+  file: path=/etc/systemd/system/default.target src=/lib/systemd/system/graphical.target state=link
+
+- name: Start LightDM
+  service:
+    name: lightdm
+    enabled: yes
+    state: started

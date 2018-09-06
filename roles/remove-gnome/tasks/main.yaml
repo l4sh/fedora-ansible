@@ -1,0 +1,15 @@
+# Main tasks file for remove-gnome role
+
+- name: Stop GDM
+  service:
+    name: gdm3
+    state: stopped
+  ignore_errors: yes
+
+- name: uninstall the 'GNOME Desktop Environment' package group
+  dnf:
+    name:
+      - '"@GNOME Desktop Environment"'
+      - gnome-desktop3
+    state: absent
+    autoremove: yes

@@ -1,0 +1,22 @@
+- name: Get current platform
+  shell: uname -i
+  register: platform
+
+- name: Get latest virtualbox version number
+  shell: curl "https://download.virtualbox.org/virtualbox/LATEST.TXT"
+  register: virtualbox_version
+
+- name: Get VirtualBox RPM Link
+  shell: >
+    curl https://download.virtualbox.org/virtualbox/{{virtualbox_version.stdout}}/ |
+    grep "fedora" |
+    grep {{platform.stdout}} |
+    sed 's/.*href="\([^"]*\).*/\1/'|
+    sort -r |
+    head -n 1
+  register: virtualbox_package
+
+- name: Install virtualbox from https://download.virtualbox.org/virtualbox/{{virtualbox_version.stdout}}/{{virtualbox_package.stdout}}
+  dnf:
+    name: https://download.virtualbox.org/virtualbox/{{virtualbox_version.stdout}}/{{virtualbox_package.stdout}}
+    state: present

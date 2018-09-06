@@ -1,0 +1,8 @@
+- name: Install NetworkManager packages
+  dnf:
+    name:
+      - NetworkManager-wifi
+      - NetworkManager-bluetooth
+      - NetworkManager-openvpn
+      - network-manager-applet
+    state: present

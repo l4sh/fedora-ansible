@@ -1,0 +1,8 @@
+- name: Install tools
+  dnf:
+    name:
+      - gtkhash
+      - kmag
+      - scrot
+      - pavucontrol
+    state: present

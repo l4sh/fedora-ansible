@@ -1,0 +1,7 @@
+# Main tasks file for x-server role
+
+- name: Install base-x package group
+  dnf:
+    name:
+      - '@base-x'
+  state: present

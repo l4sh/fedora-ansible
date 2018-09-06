@@ -1,0 +1,11 @@
+- name: Download manager
+  dnf:
+    name:
+      - persepolis
+    state: present
+
+- name: Install FTP client
+  dnf:
+    name:
+      - filezilla
+    state: present

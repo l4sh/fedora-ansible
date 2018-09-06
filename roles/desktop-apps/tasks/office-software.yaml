@@ -1,0 +1,6 @@
+- name: Install office software
+  dnf:
+    name:
+      - '@LibreOffice'
+      - okular
+    state: present

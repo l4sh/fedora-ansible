@@ -1,0 +1,23 @@
+- name: Install file manager
+  dnf:
+    name:
+      - Thunar
+      - gtkhash-thunar
+      - thunar-sendto-clamtk
+      - thunar-archive-plugin
+      - thunar-media-tags-plugin
+      - thunar-volman
+      # Other file systems support
+      - gvfs
+      - gvfs-mtp
+      - gvfs-gphoto2
+      - gvfs-smb
+      - gvfs-fuse
+      # Thumbnailing support
+      - tumbler
+      - tumbler-extras
+      - poppler-glib
+      - ffmpegthumbnailer
+      - freetype
+      - libgsf
+    state: present

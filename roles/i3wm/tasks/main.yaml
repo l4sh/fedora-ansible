@@ -1,0 +1,10 @@
+# i3wm role tasks
+- name: Install i3WM
+  dnf:
+    name:
+      - i3
+      - i3lock
+      - i3status
+      - i3-ipc
+      - dunst
+    state: present

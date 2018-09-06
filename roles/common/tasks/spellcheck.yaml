@@ -1,0 +1,14 @@
+- name: Install spellcheck dictionaries
+  dnf:
+    name:
+      - hunspell-en
+      - hunspell-en-US
+      - hunspell-sv
+      - hunspell-de
+      - hunspell-es
+      - hunspell-nb
+      - hunspell-nl
+      - hunspell-it
+      - hunspell-fr
+      - hunspell-pt
+    state: present

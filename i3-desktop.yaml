@@ -1,0 +1,12 @@
+- hosts: all
+  roles:
+    - common
+    - x-server
+    - audio
+    - lightdm
+    - i3wm
+    - network-tools
+    - desktop-apps
+    - virtualbox
+  vars:
+    fedora_version: 28

@@ -1,0 +1,8 @@
+# common role tasks
+- import_tasks: ansible.yaml
+- import_tasks: rpmfusion.yaml
+- import_tasks: system-utils.yaml
+- import_tasks: build-essential.yaml
+- import_tasks: network-manager.yaml
+- import_tasks: spellcheck.yaml
+- import_tasks: editors.yaml

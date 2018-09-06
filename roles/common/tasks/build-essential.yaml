@@ -1,0 +1,19 @@
+- name: Install build dependencies & tools
+  dnf:
+    name:
+      - gcc
+      - gcc-c++
+      - make
+      - patch
+      - libgomp
+      - binutils
+      - glibc-headers
+      - glibc-devel
+      - kernel-headers
+      - kernel-devel
+      - dkms
+      - clang
+      - autoconf
+      - automake
+      - rpm-build
+    state: present

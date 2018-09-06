@@ -1,0 +1,30 @@
+- name: Install system utilities
+  dnf:
+    name:
+      - convmv
+      - curl
+      - fdupes
+      - htop
+      - lm_sensors
+      - lm_sensors-sensord
+      - ncdu
+      - ntfs-3g
+      - mc
+      - p7zip
+      - p7zip-plugins
+      - ranger
+      - rsync
+      - samba-client
+      - scrot
+      - telnet
+      - testdisk
+      - tmux
+      - unrar
+      - w3m
+      - w3m-img
+      - whois
+      - xclip
+      - xdotool
+      - zsh
+      - git
+    state: present
